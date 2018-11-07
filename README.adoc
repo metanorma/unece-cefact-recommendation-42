@@ -6,7 +6,7 @@ image:https://travis-ci.com/riboseinc/unece-cefact-recommendation-42.svg?branch=
 
 This document is available in its rendered forms here:
 
-* https://riboseinc.github.io/unece-cefact-recommendation-42/[riboseinc Calendar operator practices -- Guidelines to protect against calendar abuse (HTML)]
+* https://riboseinc.github.io/unece-cefact-recommendation-42/[UN/CEFACT Recommendation 42 (HTML)]
 * https://riboseinc.github.io/unece-cefact-recommendation-42/unece-cefact-recommendation-42.pdf[PDF]
 * https://riboseinc.github.io/unece-cefact-recommendation-42/unece-cefact-recommendation-42.xml[Metanorma XML]
 * https://riboseinc.github.io/unece-cefact-recommendation-42/unece-cefact-recommendation-42.rxl[Relaton XML (Bibliographic item)]
