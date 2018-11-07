@@ -1,0 +1,66 @@
+:repo-name: unece-cefact-recommendation-42
+
+= UN/CEFACT Recommendation 42
+
+image:https://travis-ci.com/riboseinc/unece-cefact-recommendation-42.svg?branch=master["Build Status", link="https://travis-ci.com/riboseinc/unece-cefact-recommendation-42"]
+
+This document is available in its rendered forms here:
+
+* https://riboseinc.github.io/unece-cefact-recommendation-42/[riboseinc Calendar operator practices -- Guidelines to protect against calendar abuse (HTML)]
+* https://riboseinc.github.io/unece-cefact-recommendation-42/unece-cefact-recommendation-42.pdf[PDF]
+* https://riboseinc.github.io/unece-cefact-recommendation-42/unece-cefact-recommendation-42.xml[Metanorma XML]
+* https://riboseinc.github.io/unece-cefact-recommendation-42/unece-cefact-recommendation-42.rxl[Relaton XML (Bibliographic item)]
+
+
+== Fetching the document
+
+[source,sh]
+----
+git clone https://github.com/riboseinc/unece-cefact-recommendation-42/
+----
+
+== Installing Build Tools
+
+See https://www.metanorma.com/overview/getting-started/
+
+
+== Running via Docker or locally
+
+If you have installed the build tools locally, and wish to run the
+locally-installed compilation tools, there is nothing further to set.
+
+If you don't want to deal with local dependencies, use the docker
+version by:
+
+[source,sh]
+----
+export METANORMA_DOCKER=1
+----
+
+The `Makefile` will automatically choose the proper command to
+execute.
+
+
+== Building The Document
+
+[source,sh]
+----
+make clean all
+----
+
+The following outputs will be built:
+
+* UNECE XML (https://github.com/riboseinc/metanorma-model-unece) (`[filename].xml`)
+* HTML (`[filename].html`)
+* PDF (`[filename].pdf`)
+* Word DOC (`[filename].doc`)
+
+
+== Iterating the document
+
+[source,sh]
+----
+make html
+open unece-*.html
+----
+
