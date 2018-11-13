@@ -1,0 +1,32 @@
+<bibdata type="recommendation">
+  <title language="en" format="plain">Trade and Transport Facilitation Monitoring Mechanism</title>
+  <subtitle language="en" format="plain"/>
+  <docidentifier>42</docidentifier>
+  <contributor>
+    <role type="author"/>
+    <organization>
+      <name>UNECE</name>
+    </organization>
+  </contributor>
+  <contributor>
+    <role type="publisher"/>
+    <organization>
+      <name>UNECE</name>
+    </organization>
+  </contributor>
+  <language>en</language>
+  <script>Latn</script>
+  <status format="plain">published</status>
+  <copyright>
+    <from>2017</from>
+    <owner>
+      <organization>
+        <name>UNECE</name>
+      </organization>
+    </owner>
+  </copyright>
+  <editorialgroup>
+    <committee>United Nations Centre for Trade Facilitation and Electronic Business (UN/CEFACT)</committee>
+  </editorialgroup>
+  <session/>
+</bibdata>
