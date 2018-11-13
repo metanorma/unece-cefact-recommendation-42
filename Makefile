@@ -16,9 +16,10 @@ XML  := $(patsubst %.adoc,%.xml,$(SRC))
 HTML := $(patsubst %.adoc,%.html,$(SRC))
 DOC  := $(patsubst %.adoc,%.doc,$(SRC))
 PDF  := $(patsubst %.adoc,%.pdf,$(SRC))
+RXL  := $(patsubst %.adoc,%.rxl,$(SRC))
 
-COMPILE_CMD_LOCAL := bundle exec metanorma -t $(DOCTYPE) -x $(FORMATS_LIST) $$FILENAME
-COMPILE_CMD_DOCKER := docker run -v "$$(pwd)":/metanorma/ ribose/metanorma "metanorma -t $(DOCTYPE) -x $(FORMATS_LIST) $$FILENAME"
+COMPILE_CMD_LOCAL := bundle exec metanorma -t $(DOCTYPE) -R $(RXL) -x $(FORMATS_LIST) $$FILENAME
+COMPILE_CMD_DOCKER := docker run -v "$$(CURDIR)":/metanorma/ ribose/metanorma "metanorma -t $(DOCTYPE) -R $(RXL) -x $(FORMATS_LIST) $$FILENAME"
 
 ifdef METANORMA_DOCKER
   COMPILE_CMD := echo "Compiling via docker..."; $(COMPILE_CMD_DOCKER)
@@ -91,7 +92,7 @@ endef
 
 $(foreach FORMAT,$(FORMATS),$(eval $(WATCH_TASKS)))
 
-serve: $(NODE_BIN_DIR)/live-server revealjs-css reveal.js images
+serve: $(NODE_BIN_DIR)/live-server images
 	export PORT=$${PORT:-8123} ; \
 	port=$${PORT} ; \
 	for html in $(HTML); do \
