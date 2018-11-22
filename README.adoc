@@ -38,7 +38,7 @@ export METANORMA_DOCKER=1
 ----
 
 The `Makefile` will automatically choose the proper command to
-execute.
+execute. For Windows OS please use `Makefile.win`
 
 
 == Building The Document
@@ -47,6 +47,15 @@ execute.
 ----
 make clean all
 ----
+
+or 
+
+[source,sh]
+----
+make -f Makefile.win clean all
+----
+
+for Windows OS (Also to avoid of docker sharing issues please checkout sources to your %USERPROFILE% directory)
 
 The following outputs will be built:
 
