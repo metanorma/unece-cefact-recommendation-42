@@ -3,12 +3,10 @@
 include metanorma.env
 export $(shell sed 's/=.*//' metanorma.env)
 
-DOCTYPE := $(METANORMA_DOCTYPE)
 FORMATS := $(METANORMA_FORMATS)
 comma := ,
 empty :=
 space := $(empty) $(empty)
-FORMATS_LIST := $(subst $(space),$(comma),$(FORMATS))
 
 SRC  := $(filter-out README.adoc, $(wildcard *.adoc))
 XML  := $(patsubst %.adoc,%.xml,$(SRC))
@@ -18,8 +16,8 @@ PDF  := $(patsubst %.adoc,%.pdf,$(SRC))
 RXL  := $(patsubst %.adoc,%.rxl,$(SRC))
 
 HOST_SHARE_DIR=$(USERPROFILE)\$(shell for %%I in (.) do echo %%~nxI)
-COMPILE_CMD_LOCAL := bundle exec metanorma -t $(DOCTYPE) -R $(RXL) -x $(FORMATS_LIST) $(SRC)
-COMPILE_CMD_DOCKER := C:/ProgramData/chocolatey/bin/docker run --rm -it -v $(CURDIR):/metanorma/ ribose/metanorma "metanorma -t $(DOCTYPE) -R $(RXL) -x $(FORMATS_LIST) $(SRC)"
+COMPILE_CMD_LOCAL := bundle exec metanorma -R $(RXL) $(SRC)
+COMPILE_CMD_DOCKER := C:/ProgramData/chocolatey/bin/docker run --rm -it -v $(CURDIR):/metanorma/ ribose/metanorma "metanorma -R $(RXL) $(SRC)"
 
 ifdef METANORMA_DOCKER
   COMPILE_CMD := echo "Compiling via docker..." & $(COMPILE_CMD_DOCKER)

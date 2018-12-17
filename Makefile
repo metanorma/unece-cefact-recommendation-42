@@ -4,12 +4,10 @@ SHELL := /bin/bash
 include metanorma.env
 export $(shell sed 's/=.*//' metanorma.env)
 
-DOCTYPE := $(METANORMA_DOCTYPE)
 FORMATS := $(METANORMA_FORMATS)
 comma := ,
 empty :=
 space := $(empty) $(empty)
-FORMATS_LIST := $(subst $(space),$(comma),$(FORMATS))
 
 SRC  := $(filter-out README.adoc, $(wildcard *.adoc))
 XML  := $(patsubst %.adoc,%.xml,$(SRC))
@@ -18,8 +16,8 @@ DOC  := $(patsubst %.adoc,%.doc,$(SRC))
 PDF  := $(patsubst %.adoc,%.pdf,$(SRC))
 RXL  := $(patsubst %.adoc,%.rxl,$(SRC))
 
-COMPILE_CMD_LOCAL := bundle exec metanorma -t $(DOCTYPE) -R $(RXL) -x $(FORMATS_LIST) $$FILENAME
-COMPILE_CMD_DOCKER := docker run -v "$$(CURDIR)":/metanorma/ ribose/metanorma "metanorma -t $(DOCTYPE) -R $(RXL) -x $(FORMATS_LIST) $$FILENAME"
+COMPILE_CMD_LOCAL := bundle exec metanorma -R $(RXL) $$FILENAME
+COMPILE_CMD_DOCKER := docker run -v "$$(CURDIR)":/metanorma/ ribose/metanorma "metanorma -R $(RXL) $$FILENAME"
 
 ifdef METANORMA_DOCKER
   COMPILE_CMD := echo "Compiling via docker..."; $(COMPILE_CMD_DOCKER)
