@@ -7,6 +7,9 @@
 :copyright-year: 2017
 :imagesdir: images
 :toc:
+:docfile: unece-cefact-recommendation-42.adoc
+:mn-document-class: unece
+:mn-output-extensions: xml,html,doc
 :local-cache-only:
 :data-uri-image:
 
