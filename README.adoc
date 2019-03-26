@@ -3,6 +3,7 @@
 = UN/CEFACT Recommendation 42
 
 image:https://travis-ci.com/metanorma/unece-cefact-recommendation-42.svg?branch=master["Build Status", link="https://travis-ci.com/metanorma/unece-cefact-recommendation-42"]
+image:https://ci.appveyor.com/api/projects/status/350pbtyt6g3pk88s?svg=true["AppVeyor Build Status", link="https://ci.appveyor.com/project/ribose/unece-cefact-recommendation-42"]
 
 This document is available in its rendered forms here:
 
