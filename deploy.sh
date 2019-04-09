@@ -66,6 +66,8 @@ main() {
   git add .
   git commit -m "Deploy to GitHub Pages: ${SHA}"
 
+  ssh-keyscan -t rsa github.com | ssh-keygen -lf -
+
   eval `ssh-agent -s`
   ssh-add ${KEY_NAME}
 
