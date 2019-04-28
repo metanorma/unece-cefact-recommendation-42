@@ -1,9 +1,7 @@
 <bibdata type="recommendation">
-  <title language="en" format="text/plain">Trade and Transport Facilitation Monitoring Mechanism</title>
-  <subtitle language="en" format="text/plain"/>
+  <title type="main" language="en" format="text/plain">Trade and Transport Facilitation Monitoring Mechanism</title>
   <docidentifier>42</docidentifier>
   <docnumber>42</docnumber>
-  
   <contributor>
     <role type="author"/>
     <organization>
@@ -16,6 +14,7 @@
       <name>UNECE</name>
     </organization>
   </contributor>
+  
   <language>ar</language>
   <language>ru</language>
   <language>en</language>
