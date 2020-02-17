@@ -1,9 +1,6 @@
 #!make
 SHELL := /bin/bash
 
-FORMAT_MARKER := mn-output-
-FORMATS := $(shell grep "$(FORMAT_MARKER)" *.adoc | cut -f 2 -d ' ' | tr ',' '\n' | sort | uniq | tr '\n' ' ')
-
 SRC  := $(filter-out README.adoc, $(wildcard *.adoc))
 XML  := $(patsubst %.adoc,%.xml,$(SRC))
 HTML := $(patsubst %.adoc,%.html,$(SRC))
@@ -12,6 +9,9 @@ PDF  := $(patsubst %.adoc,%.pdf,$(SRC))
 WSD  := $(wildcard models/*.wsd)
 XMI	 := $(patsubst models/%,xmi/%,$(patsubst %.wsd,%.xmi,$(WSD)))
 PNG	 := $(patsubst models/%,images/%,$(patsubst %.wsd,%.png,$(WSD)))
+
+FORMAT_MARKER := mn-output-
+FORMATS := $(shell grep "$(FORMAT_MARKER)" $(SRC) | cut -f 2 -d " " | tr "," "\\n" | sort | uniq | tr "\\n" " ")
 
 COMPILE_CMD_LOCAL := bundle exec metanorma $$FILENAME
 COMPILE_CMD_DOCKER := docker run -v "$$(pwd)":/metanorma/ ribose/metanorma "metanorma $$FILENAME"
